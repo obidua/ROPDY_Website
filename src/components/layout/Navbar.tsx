@@ -335,6 +335,16 @@ const Navbar: React.FC = () => {
             >
               ROPDY Mint
             </ScrollToTopLink>
+            <ScrollToTopLink
+              to="/ropdy-circle"
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === "/ropdy-circle"
+                  ? "text-green-400"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              ROPDY Circle
+            </ScrollToTopLink>
             {/* <ScrollToTopLink
               to="/token"
               className={`text-sm font-medium transition-colors ${
@@ -436,6 +446,17 @@ const Navbar: React.FC = () => {
             }`}
           >
             ROPDY Mint
+          </ScrollToTopLink>
+          <ScrollToTopLink
+            to="/ropdy-circle"
+            onClick={closeMenu}
+            className={`block px-3 py-2 rounded-md text-base font-medium ${
+              location.pathname === "/ropdy-circle"
+                ? "bg-green-800/50 text-white"
+                : "text-gray-300 hover:bg-green-900/30 hover:text-white"
+            }`}
+          >
+            ROPDY Circle
           </ScrollToTopLink>
           <ScrollToTopLink
             to="/token"

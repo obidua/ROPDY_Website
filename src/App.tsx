@@ -9,6 +9,7 @@ import DashboardPage from './pages/DashboardPage';
 import HowItWorksPage from './pages/HowItWorksPage';
 import JoinRopdyPage from './pages/JoinRopdyPage';
 import RopdyMintPage from './pages/RopdyMintPage';
+import RopdyCirclePage from './pages/RopdyCirclePage';
 import { WalletProvider } from './context/WalletContext';
 import './App.css';
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
               <Route path="/how-it-works" element={<HowItWorksPage />} />
               <Route path="/join" element={<JoinRopdyPage />} />
               <Route path="/ropdy-mint" element={<RopdyMintPage />} />
+              <Route path="/ropdy-circle" element={<RopdyCirclePage />} />
               {/* Add a catch-all route for 404 pages */}
               <Route path="*" element={<HomePage />} />
             </Routes>
