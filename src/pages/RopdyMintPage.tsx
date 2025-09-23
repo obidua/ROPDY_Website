@@ -525,17 +525,16 @@ const RopdyMintPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-white mb-4">Get Started in Minutes</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
             {[
               { step: 1, title: 'Create a Ramestta Wallet', desc: 'Back up your keys securely.', icon: Wallet },
               { step: 2, title: 'Choose a Tier', desc: 'Pick 2× or 3× horizon.', icon: Layers },
               { step: 3, title: 'Stake RAMA', desc: 'Deposit RAMA equal to your chosen USD amount.', icon: Lock },
               { step: 4, title: 'Earn Daily ROI', desc: 'Rewards start minting automatically.', icon: Sparkles },
-             { step: 5, title: 'Configure Auto Top-Up', desc: 'Set up automatic slot management.', icon: Settings },
-             { step: 6, title: 'Grow Your Network', desc: 'Activate Circle income and aim for Leadership milestones.', icon: Network },
+              { step: 5, title: 'Configure Auto Top-Up', desc: 'Set up automatic slot management.', icon: Settings },
+              { step: 6, title: 'Grow Your Network', desc: 'Activate Circle income and aim for Leadership milestones.', icon: Network },
             ].map((item, index) => (
-             <Card key={index} className="p-6 text-center bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
+              <Card key={index} className="p-6 text-center bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-teal-600 flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold">{item.step}</span>
                 </div>
@@ -622,8 +621,8 @@ const RopdyMintPage: React.FC = () => {
             <div className="space-y-2 text-sm text-red-200">
               <p>• Crypto assets are volatile; <strong>returns are not guaranteed</strong>.</p>
               <p>• Program parameters can change; <strong>always review the latest official details</strong>.</p>
-             <p>• All payouts include a <strong>5% system fee</strong>; factor this into your calculations.</p>
-             <p>• The 3× cap applies to ROI + Spot + Growth income; <strong>level rewards are separate</strong>.</p>
+              <p>• All payouts include a <strong>5% system fee</strong>; factor this into your calculations.</p>
+              <p>• The 3× cap applies to ROI + Spot + Growth income; <strong>level rewards are separate</strong>.</p>
               <p>• This material is <strong>informational</strong> and not investment advice.</p>
               <p>• Participation may be restricted in some jurisdictions; ensure <strong>legal compliance</strong>.</p>
             </div>
