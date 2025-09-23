@@ -50,3 +50,4 @@ export const SlideTemplate: React.FC<SlideTemplateProps> = ({
       </motion.div>
     </div>
   );
+}
