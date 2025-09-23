@@ -26,11 +26,11 @@ const RopdyMintPage: React.FC = () => {
   }, []);
 
   const mintTiers = [
-    { tier: 1, minStake: 5, horizon2x: 1080, roi2x: 0.09, horizon3x: 1440, roi3x: 0.14 },
-    { tier: 2, minStake: 10, horizon2x: 990, roi2x: 0.10, horizon3x: 1290, roi3x: 0.16 },
-    { tier: 3, minStake: 20, horizon2x: 900, roi2x: 0.11, horizon3x: 1200, roi3x: 0.17 },
-    { tier: 4, minStake: 40, horizon2x: 810, roi2x: 0.12, horizon3x: 1110, roi3x: 0.18 },
-    { tier: 5, minStake: 80, horizon2x: 600, roi2x: 0.17, horizon3x: 900, roi3x: 0.22 },
+    { tier: 1, minStake: 5, horizon2x: 990, roi2x: 0.20, horizon3x: 1350, roi3x: 0.22 },
+    { tier: 2, minStake: 10, horizon2x: 900, roi2x: 0.22, horizon3x: 1260, roi3x: 0.24 },
+    { tier: 3, minStake: 20, horizon2x: 810, roi2x: 0.25, horizon3x: 1170, roi3x: 0.26 },
+    { tier: 4, minStake: 40, horizon2x: 720, roi2x: 0.28, horizon3x: 1080, roi3x: 0.28 },
+    { tier: 5, minStake: 80, horizon2x: 600, roi2x: 0.33, horizon3x: 930, roi3x: 0.32 },
   ];
 
   const circleLevels = [
@@ -47,14 +47,16 @@ const RopdyMintPage: React.FC = () => {
   ];
 
   const leadershipRewards = [
-    { reward: '$100', gtoShare: '2.5%', selfBusiness: '$300', directs: 5, directStaked: '$500', teamSize: 10, teamBusiness: '$5,000' },
-    { reward: '$300', gtoShare: '2%', selfBusiness: '$500', directs: 5, directStaked: '$1,000', teamSize: 20, teamBusiness: '$10,000' },
-    { reward: '$500', gtoShare: '1.5%', selfBusiness: '$1,000', directs: 7, directStaked: '$2,000', teamSize: 40, teamBusiness: '$30,000' },
-    { reward: '$3,500', gtoShare: '1%', selfBusiness: '$2,000', directs: 10, directStaked: '$3,000', teamSize: 100, teamBusiness: '$100,000' },
-    { reward: '$11,000', gtoShare: '0.75%', selfBusiness: '$3,000', directs: 15, directStaked: '$5,000', teamSize: 150, teamBusiness: '4× $3,500 Achiever' },
-    { reward: '$41,000 + Trip', gtoShare: '0.5%', selfBusiness: '$4,000', directs: 20, directStaked: '$7,000', teamSize: 200, teamBusiness: '4× $11,000 Achiever' },
-    { reward: '$400,000 + Bungalow', gtoShare: '0.25%', selfBusiness: '$5,000', directs: 25, directStaked: '$10,000', teamSize: 300, teamBusiness: '3× $41,000 Achiever' },
-    { reward: '$600,000', gtoShare: '0.25%', selfBusiness: '$10,000', directs: 35, directStaked: '$25,000', teamSize: 400, teamBusiness: '5× $400,000 Achiever' },
+    { reward: '$100', gtoShare: '2.0%', selfBusiness: '$200', directs: 2, directStaked: '$300', teamSize: 10, teamBusiness: '$2,000' },
+    { reward: '$250', gtoShare: '1.8%', selfBusiness: '$300', directs: 3, directStaked: '$600', teamSize: 20, teamBusiness: '$5,000' },
+    { reward: '$500', gtoShare: '1.5%', selfBusiness: '$500', directs: 4, directStaked: '$1,200', teamSize: 40, teamBusiness: '$15,000' },
+    { reward: '$1,000', gtoShare: '1.2%', selfBusiness: '$1,000', directs: 5, directStaked: '$2,500', teamSize: 80, teamBusiness: '$40,000' },
+    { reward: '$2,500', gtoShare: '1.0%', selfBusiness: '$2,000', directs: 6, directStaked: '$5,000', teamSize: 150, teamBusiness: '$100,000' },
+    { reward: '$5,000', gtoShare: '0.8%', selfBusiness: '$4,000', directs: 8, directStaked: '$10,000', teamSize: 300, teamBusiness: '$250,000' },
+    { reward: '$10,000', gtoShare: '0.6%', selfBusiness: '$6,000', directs: 10, directStaked: '$20,000', teamSize: 500, teamBusiness: '$500,000' },
+    { reward: '$25,000', gtoShare: '0.4%', selfBusiness: '$10,000', directs: 12, directStaked: '$40,000', teamSize: 800, teamBusiness: '$1,200,000' },
+    { reward: '$50,000', gtoShare: '0.3%', selfBusiness: '$20,000', directs: 15, directStaked: '$80,000', teamSize: 1500, teamBusiness: '$3,000,000' },
+    { reward: '$100,000', gtoShare: '0.2%', selfBusiness: '$50,000', directs: 20, directStaked: '$150,000', teamSize: 3000, teamBusiness: '$8,000,000' },
   ];
 
   return (
