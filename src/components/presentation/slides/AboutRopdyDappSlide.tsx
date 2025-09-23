@@ -100,11 +100,11 @@ export const AboutRopdyDappSlide: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
             className="cyber-card p-4 sm:p-6 bg-gradient-to-br from-gray-900/20 to-black/50 hover:scale-105 transition-all duration-300"
-      className="mb-8 sm:mb-12"
+          >
             <feature.icon className={`w-8 h-8 sm:w-12 sm:h-12 ${feature.color} mx-auto mb-2 sm:mb-4`} />
-      <div className="flex items-center justify-center mb-4 sm:mb-6">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center">
-          <span className="text-white font-bold text-xl sm:text-2xl">⚡</span>
+            <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-3">{feature.title}</h3>
+            <p className="text-xs sm:text-sm text-gray-300">{feature.description}</p>
+          </motion.div>
         ))}
       </div>
 
@@ -138,8 +138,7 @@ export const AboutRopdyDappSlide: React.FC = () => {
         <Users className="w-10 h-10 sm:w-16 sm:h-16 text-purple-400 mx-auto mb-2 sm:mb-4" />
         <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4">Join the Revolution</h3>
         <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-          <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-3">{feature.title}</h3>
-          <p className="text-xs sm:text-sm text-gray-300">{feature.description}</p>
+          Experience the future of decentralized finance with ROPDY DApp. Start earning passive income today with complete transparency and security.
         </p>
       </motion.div>
     </div>
