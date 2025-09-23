@@ -47,16 +47,16 @@ const RopdyMintPage: React.FC = () => {
   ];
 
   const leadershipRewards = [
-    { reward: '$100', gtoShare: '2.0%', selfBusiness: '$200', directs: 2, directStaked: '$300', teamSize: 10, teamBusiness: '$2,000' },
-    { reward: '$250', gtoShare: '1.8%', selfBusiness: '$300', directs: 3, directStaked: '$600', teamSize: 20, teamBusiness: '$5,000' },
-    { reward: '$500', gtoShare: '1.5%', selfBusiness: '$500', directs: 4, directStaked: '$1,200', teamSize: 40, teamBusiness: '$15,000' },
-    { reward: '$1,000', gtoShare: '1.2%', selfBusiness: '$1,000', directs: 5, directStaked: '$2,500', teamSize: 80, teamBusiness: '$40,000' },
-    { reward: '$2,500', gtoShare: '1.0%', selfBusiness: '$2,000', directs: 6, directStaked: '$5,000', teamSize: 150, teamBusiness: '$100,000' },
-    { reward: '$5,000', gtoShare: '0.8%', selfBusiness: '$4,000', directs: 8, directStaked: '$10,000', teamSize: 300, teamBusiness: '$250,000' },
-    { reward: '$10,000', gtoShare: '0.6%', selfBusiness: '$6,000', directs: 10, directStaked: '$20,000', teamSize: 500, teamBusiness: '$500,000' },
-    { reward: '$25,000', gtoShare: '0.4%', selfBusiness: '$10,000', directs: 12, directStaked: '$40,000', teamSize: 800, teamBusiness: '$1,200,000' },
-    { reward: '$50,000', gtoShare: '0.3%', selfBusiness: '$20,000', directs: 15, directStaked: '$80,000', teamSize: 1500, teamBusiness: '$3,000,000' },
-    { reward: '$100,000', gtoShare: '0.2%', selfBusiness: '$50,000', directs: 20, directStaked: '$150,000', teamSize: 3000, teamBusiness: '$8,000,000' },
+    { level: 1, reward: '$100', gtoShare: '2.0%', boosterPct: '10%', selfBusiness: '$200', directs: 2, directStaked: '$300', teamSize: 10, teamBusiness: '$2,000' },
+    { level: 2, reward: '$250', gtoShare: '1.8%', boosterPct: '12%', selfBusiness: '$300', directs: 3, directStaked: '$600', teamSize: 20, teamBusiness: '$5,000' },
+    { level: 3, reward: '$500', gtoShare: '1.5%', boosterPct: '14%', selfBusiness: '$500', directs: 4, directStaked: '$1,200', teamSize: 40, teamBusiness: '$15,000' },
+    { level: 4, reward: '$1,000', gtoShare: '1.2%', boosterPct: '16%', selfBusiness: '$1,000', directs: 5, directStaked: '$2,500', teamSize: 80, teamBusiness: '$40,000' },
+    { level: 5, reward: '$2,500', gtoShare: '1.0%', boosterPct: '18%', selfBusiness: '$2,000', directs: 6, directStaked: '$5,000', teamSize: 150, teamBusiness: '$100,000' },
+    { level: 6, reward: '$5,000', gtoShare: '0.8%', boosterPct: '20%', selfBusiness: '$4,000', directs: 8, directStaked: '$10,000', teamSize: 300, teamBusiness: '$250,000' },
+    { level: 7, reward: '$10,000', gtoShare: '0.6%', boosterPct: '22%', selfBusiness: '$6,000', directs: 10, directStaked: '$20,000', teamSize: 500, teamBusiness: '$500,000' },
+    { level: 8, reward: '$25,000', gtoShare: '0.4%', boosterPct: '24%', selfBusiness: '$10,000', directs: 12, directStaked: '$40,000', teamSize: 800, teamBusiness: '$1,200,000' },
+    { level: 9, reward: '$50,000', gtoShare: '0.3%', boosterPct: '26%', selfBusiness: '$20,000', directs: 15, directStaked: '$80,000', teamSize: 1500, teamBusiness: '$3,000,000' },
+    { level: 10, reward: '$100,000', gtoShare: '0.2%', boosterPct: '28%', selfBusiness: '$50,000', directs: 20, directStaked: '$150,000', teamSize: 3000, teamBusiness: '$8,000,000' },
   ];
 
   return (
@@ -299,12 +299,49 @@ const RopdyMintPage: React.FC = () => {
             </p>
           </div>
 
+          {/* Booster Explanation */}
+          <Card className="p-6 bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border border-yellow-700/30 mb-12">
+            <div className="flex items-start space-x-4">
+              <Sparkles className="w-8 h-8 text-yellow-400 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-bold text-white mb-3">🚀 60-Day Booster Program</h3>
+                <p className="text-yellow-200 mb-4">
+                  <strong className="text-white">New members get enhanced rewards!</strong> If you claim any level reward within <strong className="text-yellow-400">60 days of joining</strong>, 
+                  you receive a significant bonus on top of the base reward amount.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-yellow-400 font-semibold mb-2">Booster Formula:</h4>
+                    <p className="text-yellow-200 text-sm">Level 1: +10% bonus</p>
+                    <p className="text-yellow-200 text-sm">Level 2: +12% bonus</p>
+                    <p className="text-yellow-200 text-sm">Level 3: +14% bonus</p>
+                    <p className="text-yellow-200 text-sm">...and so on (+2% per level)</p>
+                    <p className="text-yellow-200 text-sm">Level 10: +28% bonus</p>
+                  </div>
+                  <div>
+                    <h4 className="text-yellow-400 font-semibold mb-2">Example:</h4>
+                    <p className="text-yellow-200 text-sm">Level 5 base reward: $2,500</p>
+                    <p className="text-yellow-200 text-sm">With 18% booster: $2,950</p>
+                    <p className="text-yellow-200 text-sm font-bold text-yellow-400">Extra $450 bonus!</p>
+                  </div>
+                </div>
+                <div className="mt-4 p-3 bg-yellow-900/30 rounded-lg border border-yellow-700/50">
+                  <p className="text-yellow-300 text-sm">
+                    <AlertTriangle className="w-4 h-4 inline mr-2" />
+                    <strong>Time-sensitive:</strong> The 60-day window starts from your first stake. Plan your level achievements strategically!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+
           <Card className="p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30 overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead>
                 <tr className="border-b border-indigo-700/30">
                   <th className="px-3 py-3 text-left text-indigo-400 font-medium">Reward</th>
                   <th className="px-3 py-3 text-center text-indigo-400 font-medium">Global T.O. Share</th>
+                  <th className="px-3 py-3 text-center text-indigo-400 font-medium">Booster Bonus</th>
                   <th className="px-3 py-3 text-center text-indigo-400 font-medium">Self Business</th>
                   <th className="px-3 py-3 text-center text-indigo-400 font-medium">Directs</th>
                   <th className="px-3 py-3 text-center text-indigo-400 font-medium">Direct USD Staked</th>
@@ -317,6 +354,7 @@ const RopdyMintPage: React.FC = () => {
                   <tr key={index} className="border-b border-indigo-800/20">
                     <td className="px-3 py-3 text-white font-medium">{reward.reward}</td>
                     <td className="px-3 py-3 text-center text-yellow-400">{reward.gtoShare}</td>
+                    <td className="px-3 py-3 text-center text-orange-400 font-medium">{reward.boosterPct}</td>
                     <td className="px-3 py-3 text-center text-teal-400">{reward.selfBusiness}</td>
                     <td className="px-3 py-3 text-center text-purple-400">{reward.directs}</td>
                     <td className="px-3 py-3 text-center text-cyan-400">{reward.directStaked}</td>
@@ -326,6 +364,12 @@ const RopdyMintPage: React.FC = () => {
                 ))}
               </tbody>
             </table>
+            <div className="mt-4 p-3 bg-indigo-900/20 rounded-lg border border-indigo-700/30">
+              <p className="text-sm text-indigo-300">
+                <Sparkles className="w-4 h-4 inline mr-2 text-yellow-400" />
+                <strong>Booster applies to ALL levels:</strong> Claim any level reward within 60 days of joining to receive the bonus percentage on top of the base reward.
+              </p>
+            </div>
           </Card>
         </div>
       </section>
