@@ -1,0 +1,147 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Wallet, Shield, Zap, Users, Coins, Target, Globe, Lock } from 'lucide-react';
+
+export const AboutRopdyDappSlide: React.FC = () => {
+  const features = [
+    {
+      icon: Shield,
+      title: "100% Decentralized",
+      description: "No admin control - rules enforced by smart contract",
+      color: "text-green-400"
+    },
+    {
+      icon: Wallet,
+      title: "Wallet-to-Wallet",
+      description: "Direct payouts in RAMA Coin to your wallet",
+      color: "text-blue-400"
+    },
+    {
+      icon: Zap,
+      title: "Instant Transactions",
+      description: "Fast, low-fee transactions on Ramestta blockchain",
+      color: "text-yellow-400"
+    },
+    {
+      icon: Target,
+      title: "Transparent Tracking",
+      description: "All transactions visible on Ramascan explorer",
+      color: "text-purple-400"
+    }
+  ];
+
+  const programs = [
+    {
+      name: "ROPDY Circle",
+      description: "Circle-based earning system with 6-payment cycles",
+      icon: "🔄",
+      color: "from-green-900/30 to-emerald-900/30"
+    },
+    {
+      name: "ROPDY Mint",
+      description: "Stake RAMA, earn daily USD-pegged rewards",
+      icon: "⚡",
+      color: "from-blue-900/30 to-indigo-900/30"
+    }
+  ];
+
+  return (
+    <div className="text-center">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-12"
+      >
+        <div className="flex items-center justify-center mb-6">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center">
+            <span className="text-white font-bold text-2xl">⚡</span>
+          </div>
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-400">
+          ROPDY DApp
+        </h1>
+        <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          Your gateway to decentralized earning opportunities on the Ramestta blockchain
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="mb-12 cyber-card p-8 bg-gradient-to-br from-green-900/30 to-black/50"
+      >
+        <h2 className="text-3xl font-bold text-white mb-6">What is ROPDY?</h2>
+        <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-6">
+          <strong className="text-white">ROP-DY</strong> (Ramestta On-chain Passive Dynamic Yield) is a fully 
+          decentralized income engine that runs without human interference. It operates 24/7 on the Ramestta 
+          blockchain, rewarding participants in RAMA tokens.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="cyber-card p-4 bg-gradient-to-br from-emerald-900/20 to-black/50">
+            <Globe className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+            <h3 className="text-lg font-semibold text-white mb-2">Global Access</h3>
+            <p className="text-gray-300 text-sm">Anyone, anywhere can join with a Web3 wallet</p>
+          </div>
+          <div className="cyber-card p-4 bg-gradient-to-br from-blue-900/20 to-black/50">
+            <Lock className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+            <h3 className="text-lg font-semibold text-white mb-2">No KYC Required</h3>
+            <p className="text-gray-300 text-sm">Complete privacy and anonymity</p>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+            className="cyber-card p-6 bg-gradient-to-br from-gray-900/20 to-black/50 hover:scale-105 transition-all duration-300"
+          >
+            <feature.icon className={`w-12 h-12 ${feature.color} mx-auto mb-4`} />
+            <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
+            <p className="text-gray-300 text-sm">{feature.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        className="mb-8"
+      >
+        <h2 className="text-3xl font-bold text-white mb-8">Two Powerful Programs</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {programs.map((program, index) => (
+            <div
+              key={index}
+              className={`cyber-card p-8 bg-gradient-to-br ${program.color} hover:scale-105 transition-all duration-300`}
+            >
+              <div className="text-6xl mb-4">{program.icon}</div>
+              <h3 className="text-2xl font-bold text-white mb-4">{program.name}</h3>
+              <p className="text-gray-300">{program.description}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.3 }}
+        className="cyber-card p-8 bg-gradient-to-br from-purple-900/30 to-indigo-900/30"
+      >
+        <Users className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold text-white mb-4">Join the Revolution</h3>
+        <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          Experience the future of decentralized finance with ROPDY. No middlemen, no hidden fees, 
+          just transparent, automated earning opportunities powered by smart contracts.
+        </p>
+      </motion.div>
+    </div>
+  );
+};

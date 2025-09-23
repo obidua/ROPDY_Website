@@ -371,6 +371,27 @@ const Navbar: React.FC = () => {
             >
               Join
             </ScrollToTopLink>
+            <ScrollToTopLink
+              to="/presentation"
+              onClick={closeMenu}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                location.pathname === "/presentation"
+                  ? "bg-green-800/50 text-white"
+                  : "text-gray-300 hover:bg-green-900/30 hover:text-white"
+              }`}
+            >
+              Presentation
+            </ScrollToTopLink>
+            <ScrollToTopLink
+              to="/presentation"
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === "/presentation"
+                  ? "text-green-400"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              Presentation
+            </ScrollToTopLink>
 
             <a href="https://dapp.ropdy.com" target="_blank"
               onClick={isConnected ? disconnectWallet : connectWallet}

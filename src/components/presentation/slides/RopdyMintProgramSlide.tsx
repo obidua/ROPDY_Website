@@ -1,0 +1,190 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, Shield, TrendingUp, Lock, Calculator, Settings } from 'lucide-react';
+
+export const RopdyMintProgramSlide: React.FC = () => {
+  const mintTiers = [
+    { tier: 1, minStake: 5, roi2x: 0.20, roi3x: 0.22 },
+    { tier: 2, minStake: 10, roi2x: 0.22, roi3x: 0.24 },
+    { tier: 3, minStake: 20, roi2x: 0.25, roi3x: 0.26 },
+    { tier: 4, minStake: 40, roi2x: 0.28, roi3x: 0.28 },
+    { tier: 5, minStake: 80, roi2x: 0.33, roi3x: 0.32 }
+  ];
+
+  const features = [
+    {
+      icon: Sparkles,
+      title: "Stake RAMA, Earn Daily",
+      description: "Rewards calculated in USD terms, paid in RAMA",
+      color: "text-yellow-400",
+      gradient: "from-yellow-900/20 to-orange-900/20"
+    },
+    {
+      icon: Shield,
+      title: "Validator Delegation",
+      description: "Yield sourced from Ramestta node delegation",
+      color: "text-blue-400",
+      gradient: "from-blue-900/20 to-cyan-900/20"
+    },
+    {
+      icon: TrendingUp,
+      title: "Dual Income Design",
+      description: "Personal minting + 10-level network growth",
+      color: "text-purple-400",
+      gradient: "from-purple-900/20 to-indigo-900/20"
+    },
+    {
+      icon: Lock,
+      title: "3× Cap Protection",
+      description: "Total income capped at 3× your stake",
+      color: "text-green-400",
+      gradient: "from-green-900/20 to-emerald-900/20"
+    }
+  ];
+
+  const steps = [
+    {
+      step: 1,
+      title: "Stake in USD Terms",
+      description: "Deposit RAMA equal to your chosen USD stake",
+      icon: "💰"
+    },
+    {
+      step: 2,
+      title: "Pick a Horizon",
+      description: "2× (shorter) or 3× (longer, higher ROI)",
+      icon: "🎯"
+    },
+    {
+      step: 3,
+      title: "Earn to 3× Cap",
+      description: "Daily USD-pegged rewards in RAMA",
+      icon: "📈"
+    },
+    {
+      step: 4,
+      title: "Auto Top-Up",
+      description: "Configure automatic slot management",
+      icon: "⚙️"
+    }
+  ];
+
+  return (
+    <div className="text-center">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-12"
+      >
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-teal-400">
+          ROPDY Mint
+        </h1>
+        <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+          Stake RAMA, earn daily USD-pegged rewards with 5% system fee, and grow with a 10-level community engine
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="mb-12 cyber-card p-8 bg-gradient-to-br from-indigo-900/30 to-teal-900/30"
+      >
+        <h2 className="text-3xl font-bold text-white mb-6">Delegation-Backed, USD-Pegged</h2>
+        <p className="text-lg text-indigo-200 max-w-4xl mx-auto">
+          ROPDY Mint delegates RAMA to Ramestta validators (targeting ~5%–8.4% monthly gross). 
+          Rewards are collected daily and redistributed using a <strong className="text-white">USD-pegged calculation</strong>: 
+          your daily ROI is computed as a USD value and released in RAMA at the current rate, minus a 5% system fee.
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+            className={`cyber-card p-6 bg-gradient-to-br ${feature.gradient} hover:scale-105 transition-all duration-300`}
+          >
+            <feature.icon className={`w-12 h-12 ${feature.color} mx-auto mb-4`} />
+            <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
+            <p className="text-gray-300 text-sm">{feature.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="mb-12"
+      >
+        <h2 className="text-3xl font-bold text-white mb-8">Mint Tiers & Daily ROI</h2>
+        <div className="cyber-card p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 overflow-x-auto">
+          <table className="min-w-full">
+            <thead>
+              <tr className="border-b border-indigo-700/30">
+                <th className="px-4 py-3 text-left text-indigo-400 font-medium">Tier</th>
+                <th className="px-4 py-3 text-right text-indigo-400 font-medium">Min Stake (USD)</th>
+                <th className="px-4 py-3 text-right text-indigo-400 font-medium">2× Daily ROI</th>
+                <th className="px-4 py-3 text-right text-indigo-400 font-medium">3× Daily ROI</th>
+              </tr>
+            </thead>
+            <tbody>
+              {mintTiers.map((tier, index) => (
+                <tr key={index} className="border-b border-indigo-800/20">
+                  <td className="px-4 py-3 text-white font-medium">{tier.tier}</td>
+                  <td className="px-4 py-3 text-right text-white">${tier.minStake}</td>
+                  <td className="px-4 py-3 text-right text-teal-400 font-medium">{tier.roi2x}%</td>
+                  <td className="px-4 py-3 text-right text-cyan-400 font-medium">{tier.roi3x}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+        className="mb-12"
+      >
+        <h2 className="text-3xl font-bold text-white mb-8">How It Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <div key={index} className="cyber-card p-6 bg-gradient-to-br from-gray-900/20 to-black/50">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-teal-600 flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold">{step.step}</span>
+              </div>
+              <div className="text-4xl mb-3">{step.icon}</div>
+              <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-gray-300 text-sm">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.3 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <div className="cyber-card p-8 bg-gradient-to-br from-orange-900/30 to-red-900/30">
+          <Calculator className="w-12 h-12 text-orange-400 mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-4">5% System Fee</h3>
+          <p className="text-orange-200">All payouts (ROI, Spot, Growth) have a 5% fee deducted</p>
+        </div>
+        
+        <div className="cyber-card p-8 bg-gradient-to-br from-purple-900/30 to-indigo-900/30">
+          <Settings className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-4">Auto Top-Up System</h3>
+          <p className="text-purple-200">Configure automatic slot resets or new slots when approaching 3× cap</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
