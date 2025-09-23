@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, TrendingUp, Users, Network } from 'lucide-react';
@@ -93,4 +92,3 @@ export const RopdyMintCommunityEngineSlide: React.FC = () => {
     </div>
   );
 };
-```

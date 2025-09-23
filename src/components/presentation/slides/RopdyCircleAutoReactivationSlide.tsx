@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { RefreshCw, AlertTriangle } from 'lucide-react';
@@ -84,4 +83,3 @@ export const RopdyCircleAutoReactivationSlide: React.FC = () => {
     </div>
   );
 };
-```

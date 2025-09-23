@@ -136,6 +136,12 @@ export const PresentationLayout: React.FC = () => {
           borderRadius: '12px',
           padding: '8px'
         }}
+        style={{ 
+          background: isFullScreen ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.7)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '12px',
+          padding: '8px'
+        }}
       >
         {/* Left Controls */}
         <div className="flex items-center space-x-1 sm:space-x-2">

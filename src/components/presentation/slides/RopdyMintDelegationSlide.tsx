@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, DollarSign, RefreshCw } from 'lucide-react';
@@ -76,4 +75,3 @@ export const RopdyMintDelegationSlide: React.FC = () => {
     </div>
   );
 };
-```

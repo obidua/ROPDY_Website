@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Shield, Users, Coins, AlertTriangle } from 'lucide-react';
@@ -104,4 +103,3 @@ export const RopdyCircleMODsSlide: React.FC = () => {
     </div>
   );
 };
-```

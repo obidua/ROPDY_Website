@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { DollarSign, Clock, Layers } from 'lucide-react';
@@ -91,4 +90,3 @@ export const RopdyMintTiersROISlide: React.FC = () => {
     </div>
   );
 };
-```

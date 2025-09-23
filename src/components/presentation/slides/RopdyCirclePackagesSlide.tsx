@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Award, Crown, Rocket, Diamond } from 'lucide-react';
@@ -103,4 +102,3 @@ export const RopdyCirclePackagesSlide: React.FC = () => {
     </div>
   );
 };
-```

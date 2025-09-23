@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { RefreshCw, Zap, Target, Coins } from 'lucide-react';
@@ -88,4 +87,3 @@ export const RopdyCircleHowItWorksSlide: React.FC = () => {
     </div>
   );
 };
-```

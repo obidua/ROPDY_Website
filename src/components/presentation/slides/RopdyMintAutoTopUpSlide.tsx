@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { RefreshCw, Layers, Settings, AlertTriangle } from 'lucide-react';
@@ -88,4 +87,3 @@ export const RopdyMintAutoTopUpSlide: React.FC = () => {
     </div>
   );
 };
-```
