@@ -20,7 +20,7 @@ export const SlideTemplate: React.FC<SlideTemplateProps> = ({
   totalSlides,
 }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black via-green-950 to-black relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black via-green-950 to-black relative overflow-hidden p-4 sm:p-8"> {/* Added responsive padding */}
       {/* Background Effects */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-gradient-to-br from-green-500 to-emerald-900 rounded-full opacity-10 blur-3xl"></div>
       <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-gradient-to-br from-green-600 to-black rounded-full opacity-10 blur-3xl"></div>

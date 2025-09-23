@@ -394,7 +394,7 @@ const Navbar: React.FC = () => {
             </ScrollToTopLink>
 
             <a href="https://dapp.ropdy.com" target="_blank"
-              onClick={isConnected ? disconnectWallet : connectWallet}
+              // onClick={isConnected ? disconnectWallet : connectWallet} // Removed onClick to prevent wallet connection on DApp link
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 isConnected
                   ? "bg-emerald-600 hover:bg-emerald-700 text-white"
@@ -514,7 +514,7 @@ const Navbar: React.FC = () => {
           </ScrollToTopLink>
           <a href="https://dapp.ropdy.com" target="_blank"
             onClick={() => {
-              isConnected ? disconnectWallet() : connectWallet();
+              // isConnected ? disconnectWallet() : connectWallet(); // Removed onClick to prevent wallet connection on DApp link
               closeMenu();
             }}
             className={`w-full mt-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${

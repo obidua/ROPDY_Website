@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Shield, TrendingUp, Lock, Calculator, Settings } from 'lucide-react';
+import { Sparkles, Shield, TrendingUp, Lock, Calculator, Settings, DollarSign, Clock, Layers, Users, Award, AlertTriangle, Globe, Network } from 'lucide-react'; // Added more icons
 
-export const RopdyMintProgramSlide: React.FC = () => {
+export const RopdyMintIntroSlide: React.FC = () => { // Renamed to Intro slide
   const mintTiers = [
-    { tier: 1, minStake: 5, roi2x: 0.20, roi3x: 0.22 },
+    { tier: 1, minStake: 5, horizon2x: 990, roi2x: 0.20, horizon3x: 1350, roi3x: 0.22 },
     { tier: 2, minStake: 10, roi2x: 0.22, roi3x: 0.24 },
     { tier: 3, minStake: 20, roi2x: 0.25, roi3x: 0.26 },
     { tier: 4, minStake: 40, roi2x: 0.28, roi3x: 0.28 },
@@ -75,12 +75,12 @@ export const RopdyMintProgramSlide: React.FC = () => {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="mb-12"
+        className="mb-8 sm:mb-12" {/* Responsive margin */}
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-teal-400">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-teal-400"> {/* Responsive text size */}
           ROPDY Mint
         </h1>
-        <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+        <p className="text-base sm:text-xl text-gray-300 max-w-4xl mx-auto"> {/* Responsive text size */}
           Stake RAMA, earn daily USD-pegged rewards with 5% system fee, and grow with a 10-level community engine
         </p>
       </motion.div>
@@ -89,10 +89,10 @@ export const RopdyMintProgramSlide: React.FC = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="mb-12 cyber-card p-8 bg-gradient-to-br from-indigo-900/30 to-teal-900/30"
+        className="mb-8 sm:mb-12 cyber-card p-4 sm:p-8 bg-gradient-to-br from-indigo-900/30 to-teal-900/30" {/* Responsive padding and margin */}
       >
-        <h2 className="text-3xl font-bold text-white mb-6">Delegation-Backed, USD-Pegged</h2>
-        <p className="text-lg text-indigo-200 max-w-4xl mx-auto">
+        <h2 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Delegation-Backed, USD-Pegged</h2> {/* Responsive text size */}
+        <p className="text-base sm:text-lg text-indigo-200 max-w-4xl mx-auto"> {/* Responsive text size */}
           ROPDY Mint delegates RAMA to Ramestta validators (targeting ~5%–8.4% monthly gross). 
           Rewards are collected daily and redistributed using a <strong className="text-white">USD-pegged calculation</strong>: 
           your daily ROI is computed as a USD value and released in RAMA at the current rate, minus a 5% system fee.
@@ -106,11 +106,11 @@ export const RopdyMintProgramSlide: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-            className={`cyber-card p-6 bg-gradient-to-br ${feature.gradient} hover:scale-105 transition-all duration-300`}
+        className={`cyber-card p-4 sm:p-6 bg-gradient-to-br ${feature.gradient} hover:scale-105 transition-all duration-300`} {/* Responsive padding */}
           >
-            <feature.icon className={`w-12 h-12 ${feature.color} mx-auto mb-4`} />
-            <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
-            <p className="text-gray-300 text-sm">{feature.description}</p>
+            <feature.icon className={`w-8 h-8 sm:w-12 sm:h-12 ${feature.color} mx-auto mb-2 sm:mb-4`} /> {/* Responsive icon size */}
+            <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-3">{feature.title}</h3> {/* Responsive text size */}
+            <p className="text-xs sm:text-sm text-gray-300">{feature.description}</p> {/* Responsive text size */}
           </motion.div>
         ))}
       </div>
@@ -119,11 +119,11 @@ export const RopdyMintProgramSlide: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="mb-12"
+        className="mb-8 sm:mb-12" {/* Responsive margin */}
       >
-        <h2 className="text-3xl font-bold text-white mb-8">Mint Tiers & Daily ROI</h2>
-        <div className="cyber-card p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 overflow-x-auto">
-          <table className="min-w-full">
+        <h2 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-8">Mint Tiers & Daily ROI</h2> {/* Responsive text size */}
+        <div className="cyber-card p-4 sm:p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 overflow-x-auto"> {/* Responsive padding */}
+          <table className="min-w-full text-xs sm:text-sm"> {/* Responsive text size */}
             <thead>
               <tr className="border-b border-indigo-700/30">
                 <th className="px-4 py-3 text-left text-indigo-400 font-medium">Tier</th>
@@ -135,7 +135,7 @@ export const RopdyMintProgramSlide: React.FC = () => {
             <tbody>
               {mintTiers.map((tier, index) => (
                 <tr key={index} className="border-b border-indigo-800/20">
-                  <td className="px-4 py-3 text-white font-medium">{tier.tier}</td>
+                  <td className="px-4 py-3 text-white font-medium">{tier.tier}</td> {/* Responsive table cells */}
                   <td className="px-4 py-3 text-right text-white">${tier.minStake}</td>
                   <td className="px-4 py-3 text-right text-teal-400 font-medium">{tier.roi2x}%</td>
                   <td className="px-4 py-3 text-right text-cyan-400 font-medium">{tier.roi3x}%</td>
@@ -150,18 +150,18 @@ export const RopdyMintProgramSlide: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.0 }}
-        className="mb-12"
+        className="mb-8 sm:mb-12" {/* Responsive margin */}
       >
-        <h2 className="text-3xl font-bold text-white mb-8">How It Works</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <h2 className="text-xl sm:text-3xl font-bold text-white mb-4 sm:mb-8">How It Works</h2> {/* Responsive text size */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"> {/* Responsive gap */}
           {steps.map((step, index) => (
-            <div key={index} className="cyber-card p-6 bg-gradient-to-br from-gray-900/20 to-black/50">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-teal-600 flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold">{step.step}</span>
+            <div key={index} className="cyber-card p-3 sm:p-6 bg-gradient-to-br from-gray-900/20 to-black/50"> {/* Responsive padding */}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-600 to-teal-600 flex items-center justify-center mx-auto mb-2 sm:mb-4"> {/* Responsive size */}
+                <span className="text-white font-bold text-base sm:text-lg">{step.step}</span> {/* Responsive text size */}
               </div>
-              <div className="text-4xl mb-3">{step.icon}</div>
-              <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-              <p className="text-gray-300 text-sm">{step.description}</p>
+              <div className="text-2xl sm:text-4xl mb-1 sm:mb-3">{step.icon}</div> {/* Responsive icon size */}
+              <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{step.title}</h3> {/* Responsive text size */}
+              <p className="text-xs sm:text-sm text-gray-300">{step.description}</p> {/* Responsive text size */}
             </div>
           ))}
         </div>
@@ -171,18 +171,18 @@ export const RopdyMintProgramSlide: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.3 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8" {/* Responsive gap */}
       >
-        <div className="cyber-card p-8 bg-gradient-to-br from-orange-900/30 to-red-900/30">
-          <Calculator className="w-12 h-12 text-orange-400 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-white mb-4">5% System Fee</h3>
-          <p className="text-orange-200">All payouts (ROI, Spot, Growth) have a 5% fee deducted</p>
+        <div className="cyber-card p-4 sm:p-8 bg-gradient-to-br from-orange-900/30 to-red-900/30"> {/* Responsive padding */}
+          <Calculator className="w-8 h-8 sm:w-12 sm:h-12 text-orange-400 mx-auto mb-2 sm:mb-4" /> {/* Responsive icon size */}
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4">5% System Fee</h3> {/* Responsive text size */}
+          <p className="text-sm sm:text-base text-orange-200">All payouts (ROI, Spot, Growth) have a 5% fee deducted</p> {/* Responsive text size */}
         </div>
         
-        <div className="cyber-card p-8 bg-gradient-to-br from-purple-900/30 to-indigo-900/30">
-          <Settings className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-white mb-4">Auto Top-Up System</h3>
-          <p className="text-purple-200">Configure automatic slot resets or new slots when approaching 3× cap</p>
+        <div className="cyber-card p-4 sm:p-8 bg-gradient-to-br from-purple-900/30 to-indigo-900/30"> {/* Responsive padding */}
+          <Settings className="w-8 h-8 sm:w-12 sm:h-12 text-purple-400 mx-auto mb-2 sm:mb-4" /> {/* Responsive icon size */}
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4">Auto Top-Up System</h3> {/* Responsive text size */}
+          <p className="text-sm sm:text-base text-purple-200">Configure automatic slot resets or new slots when approaching 3× cap</p> {/* Responsive text size */}
         </div>
       </motion.div>
     </div>

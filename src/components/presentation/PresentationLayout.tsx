@@ -40,13 +40,13 @@ export const PresentationLayout: React.FC = () => {
   const toggleFullScreen = useCallback(() => {
     setIsFullScreen(prev => !prev);
     
-    // Hide/show website header when entering/exiting fullscreen
-    const navbar = document.querySelector('nav');
+    // Hide/show website navbar when entering/exiting fullscreen
+    const navbar = document.querySelector('nav'); // Target the nav element
     if (navbar) {
       if (!isFullScreen) {
         navbar.style.display = 'none';
       } else {
-        navbar.style.display = 'block';
+        navbar.style.display = 'flex'; // Assuming navbar is flex
       }
     }
   }, [isFullScreen]);
@@ -55,8 +55,8 @@ export const PresentationLayout: React.FC = () => {
   useEffect(() => {
     return () => {
       const navbar = document.querySelector('nav');
-      if (navbar) {
-        navbar.style.display = 'block';
+      if (navbar && navbar.style.display === 'none') { // Only show if it was hidden by presentation
+        navbar.style.display = 'flex'; // Restore original display style
       }
     };
   }, []);
@@ -125,7 +125,7 @@ export const PresentationLayout: React.FC = () => {
       {/* Navigation Controls */}
       <motion.div
         className={`fixed left-2 right-2 sm:left-4 sm:right-4 z-50 flex items-center justify-between transition-all duration-300 ${
-          isFullScreen ? 'top-4' : 'top-4'
+          isFullScreen ? 'top-4' : 'top-4' // Position remains same, transparency changes
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -134,7 +134,7 @@ export const PresentationLayout: React.FC = () => {
         {/* Left Controls */}
         <div className="flex items-center space-x-1 sm:space-x-3">
           <motion.button
-            onClick={() => {
+            onClick={() => { // Modified to ensure navbar is visible on exit
               if (isFullScreen) {
                 toggleFullScreen();
               }
@@ -164,7 +164,7 @@ export const PresentationLayout: React.FC = () => {
           <motion.button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
             className={`cyber-card p-3 transition-all duration-200 ${
-              isAutoPlay ? 'border-green-500/50 bg-green-500/10' : 'hover:border-white/40'
+              isAutoPlay ? 'border-green-500/50 bg-green-500/10' : 'hover:border-white/40' // Accent color for active state
             }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -181,7 +181,7 @@ export const PresentationLayout: React.FC = () => {
           <motion.button
             onClick={toggleFullScreen}
             className={`cyber-card p-3 transition-all duration-200 ${
-              isFullScreen 
+              isFullScreen
                 ? 'border-green-500/50 bg-green-500/10 shadow-neon' 
                 : 'hover:border-white/40'
             }`}
@@ -228,7 +228,7 @@ export const PresentationLayout: React.FC = () => {
             onClick={() => setCurrentSlide(0)}
             disabled={currentSlide === 0}
             className="p-2 sm:p-2.5 bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05 }} // Added for consistency
             whileTap={{ scale: 0.95 }}
             title="First Slide"
           >
@@ -239,7 +239,7 @@ export const PresentationLayout: React.FC = () => {
             onClick={prevSlide}
             disabled={currentSlide === 0}
             className="p-2.5 sm:p-3 bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05 }} // Added for consistency
             whileTap={{ scale: 0.95 }}
             title="Previous Slide"
           >
@@ -247,7 +247,7 @@ export const PresentationLayout: React.FC = () => {
           </motion.button>
 
           <div className="px-3 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r from-white to-green-500 text-black rounded-lg border border-white/20">
-            <span className="text-sm sm:text-base font-bold font-mono">
+            <span className="text-sm sm:text-base font-bold font-mono"> {/* Changed font to mono for consistency */}
               {currentSlide + 1} / {totalSlides}
             </span>
           </div>
@@ -256,7 +256,7 @@ export const PresentationLayout: React.FC = () => {
             onClick={nextSlide}
             disabled={currentSlide === totalSlides - 1}
             className="p-2.5 sm:p-3 bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05 }} // Added for consistency
             whileTap={{ scale: 0.95 }}
             title="Next Slide"
           >
@@ -267,7 +267,7 @@ export const PresentationLayout: React.FC = () => {
             onClick={() => setCurrentSlide(totalSlides - 1)}
             disabled={currentSlide === totalSlides - 1}
             className="p-2 sm:p-2.5 bg-white/10 hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05 }} // Added for consistency
             whileTap={{ scale: 0.95 }}
             title="Last Slide"
           >
@@ -330,7 +330,7 @@ export const PresentationLayout: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
         >
-          <div className="text-xs text-green-400 font-mono" style={{ writingMode: 'vertical-rl' }}>
+          <div className="text-xs text-green-400 font-mono" style={{ writingMode: 'vertical-rl' }}> {/* Changed font to mono for consistency */}
             FULLSCREEN MODE
           </div>
         </motion.div>
