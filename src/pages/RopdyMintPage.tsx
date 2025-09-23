@@ -17,7 +17,12 @@ import {
   AlertTriangle,
   Zap,
   Lock,
-  Globe
+  Globe,
+  Settings,
+  RefreshCw,
+  DollarSign,
+  Clock,
+  Calculator
 } from 'lucide-react';
 
 const RopdyMintPage: React.FC = () => {
@@ -74,7 +79,7 @@ const RopdyMintPage: React.FC = () => {
             Passive, Dynamic, On-Chain.
           </p>
           <p className="text-lg text-indigo-200 mb-8 max-w-3xl mx-auto">
-            Stake RAMA, earn daily USD-pegged rewards, and grow with a 10-level community engine — fully transparent and on the Ramestta network.
+            Stake RAMA, earn daily USD-pegged rewards with 5% system fee, and grow with a 10-level community engine — fully transparent and on the Ramestta network. All payouts are capped at 3× your total stake.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -95,11 +100,11 @@ const RopdyMintPage: React.FC = () => {
             </div>
             <div className="flex items-center justify-center space-x-2 bg-teal-900/30 rounded-lg p-4 border border-teal-700/30">
               <Sparkles className="w-6 h-6 text-teal-400" />
-              <span className="text-teal-200 font-medium">USD-Pegged Daily ROI</span>
+              <span className="text-teal-200 font-medium">USD-Pegged ROI (5% fee)</span>
             </div>
             <div className="flex items-center justify-center space-x-2 bg-cyan-900/30 rounded-lg p-4 border border-cyan-700/30">
               <Network className="w-6 h-6 text-cyan-400" />
-              <span className="text-cyan-200 font-medium">10-Level Growth Income</span>
+              <span className="text-cyan-200 font-medium">10-Level Growth (3× cap)</span>
             </div>
           </div>
         </div>
@@ -140,7 +145,13 @@ const RopdyMintPage: React.FC = () => {
             <Card className="p-6 bg-gradient-to-br from-emerald-900/20 to-black/50 border border-emerald-700/30">
               <Lock className="w-8 h-8 text-emerald-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">Volatility Buffer</h3>
-              <p className="text-emerald-200">Rewards are pegged to USD value at release time.</p>
+              <p className="text-emerald-200">Rewards are pegged to USD value at release time with 5% system fee.</p>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-orange-900/20 to-black/50 border border-orange-700/30">
+              <Settings className="w-8 h-8 text-orange-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Auto Top-Up System</h3>
+              <p className="text-orange-200">Configure automatic slot resets or new slots when approaching 3× cap.</p>
             </Card>
           </div>
         </div>
@@ -156,10 +167,10 @@ const RopdyMintPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-indigo-200 mb-6 text-lg">
-                ROPDY Mint delegates RAMA to Ramestta validators (targeting ~5%–8.4% monthly gross). Rewards are collected daily and redistributed to users using a <strong className="text-white">USD-pegged calculation</strong>: your daily ROI is computed as a <strong className="text-white">USD value and released in RAMA</strong> at the current rate.
+                ROPDY Mint delegates RAMA to Ramestta validators (targeting ~5%–8.4% monthly gross). Rewards are collected daily and redistributed to users using a <strong className="text-white">USD-pegged calculation</strong>: your daily ROI is computed as a <strong className="text-white">USD value and released in RAMA</strong> at the current rate, minus a <strong className="text-teal-400">5% system fee</strong>.
               </p>
               <p className="text-indigo-200 mb-8 text-lg">
-                This lets users <strong className="text-teal-400">sell instantly</strong> for stability or <strong className="text-teal-400">hold RAMA</strong> for potential upside — while the protocol continues <strong className="text-white">compounding via daily redelegation</strong>.
+                This lets users <strong className="text-teal-400">sell instantly</strong> for stability or <strong className="text-teal-400">hold RAMA</strong> for potential upside — while the protocol continues <strong className="text-white">compounding via daily redelegation</strong>. All income is capped at <strong className="text-white">3× your total stake</strong> (excluding one-time level rewards).
               </p>
             </div>
 
@@ -231,6 +242,80 @@ const RopdyMintPage: React.FC = () => {
                 ))}
               </tbody>
             </table>
+            <div className="mt-4 p-3 bg-indigo-900/20 rounded-lg border border-indigo-700/30">
+              <p className="text-sm text-indigo-300">
+                <DollarSign className="w-4 h-4 inline mr-2 text-green-400" />
+                <strong>Extra Portfolios:</strong> After opening a server for the first time, you can add extra slots on the same server with just $1 minimum stake.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Auto Top-Up System */}
+      <section className="py-20 bg-gradient-to-b from-black to-indigo-950/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">Auto Top-Up System</h2>
+            <p className="text-indigo-200 max-w-3xl mx-auto">
+              Never miss earnings due to cap limits. Configure automatic top-ups to maintain active income streams.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Card className="p-6 bg-gradient-to-br from-orange-900/20 to-black/50 border border-orange-700/30">
+              <RefreshCw className="w-8 h-8 text-orange-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Reset Mode</h3>
+              <p className="text-orange-200 mb-4">
+                Automatically reset an existing slot when your remaining cap drops below your threshold (10%-100%).
+              </p>
+              <ul className="text-orange-200 text-sm space-y-1">
+                <li>• Forfeits remaining cap from old slot</li>
+                <li>• Starts fresh with new stake amount</li>
+                <li>• Pays commissions on new volume</li>
+              </ul>
+            </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-purple-900/20 to-black/50 border border-purple-700/30">
+              <Layers className="w-8 h-8 text-purple-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Extra Slot Mode</h3>
+              <p className="text-purple-200 mb-4">
+                Automatically open a new slot on the same server while keeping your existing slot running.
+              </p>
+              <ul className="text-purple-200 text-sm space-y-1">
+                <li>• Keeps old slot active and earning</li>
+                <li>• Adds additional earning capacity</li>
+                <li>• Minimum $1 for extra slots</li>
+              </ul>
+            </Card>
+          </div>
+
+          <Card className="p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
+            <h3 className="text-xl font-bold text-white mb-4">Configuration Options</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div>
+                <h4 className="text-indigo-400 font-semibold mb-2">Threshold</h4>
+                <p className="text-indigo-200 text-sm">Set trigger point: 10%-100% remaining cap</p>
+              </div>
+              <div>
+                <h4 className="text-purple-400 font-semibold mb-2">Mode</h4>
+                <p className="text-purple-200 text-sm">Choose reset existing or add new slot</p>
+              </div>
+              <div>
+                <h4 className="text-teal-400 font-semibold mb-2">Amount</h4>
+                <p className="text-teal-200 text-sm">USD amount for the auto top-up</p>
+              </div>
+              <div>
+                <h4 className="text-cyan-400 font-semibold mb-2">Horizon</h4>
+                <p className="text-cyan-200 text-sm">Select 2× or 3× horizon for new stake</p>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-yellow-900/20 rounded-lg border border-yellow-700/30">
+              <p className="text-yellow-200 text-sm">
+                <Settings className="w-4 h-4 inline mr-2" />
+                <strong>Third-Party Execution:</strong> Anyone can trigger your auto top-up once conditions are met, making it truly automated.
+              </p>
+            </div>
           </Card>
         </div>
       </section>
@@ -367,7 +452,13 @@ const RopdyMintPage: React.FC = () => {
             <div className="mt-4 p-3 bg-indigo-900/20 rounded-lg border border-indigo-700/30">
               <p className="text-sm text-indigo-300">
                 <Sparkles className="w-4 h-4 inline mr-2 text-yellow-400" />
-                <strong>Booster applies to ALL levels:</strong> Claim any level reward within 60 days of joining to receive the bonus percentage on top of the base reward.
+                <strong>Booster applies to ALL levels:</strong> Claim any level reward within 60 days of joining to receive the bonus percentage on top of the base reward. Higher levels may require direct referrals to achieve specific lower levels first.
+              </p>
+            </div>
+            <div className="mt-4 p-3 bg-blue-900/20 rounded-lg border border-blue-700/30">
+              <p className="text-sm text-blue-300">
+                <Clock className="w-4 h-4 inline mr-2 text-blue-400" />
+                <strong>GTO Entitlement:</strong> Global Turnover percentages are informational entitlements for 2-3 years from qualification, not automatic payouts.
               </p>
             </div>
           </Card>
@@ -381,11 +472,17 @@ const RopdyMintPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-white mb-4">Program Rules & Protections</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-6 bg-gradient-to-br from-yellow-900/20 to-black/50 border border-yellow-700/30">
+              <Calculator className="w-8 h-8 text-yellow-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">5% System Fee</h3>
+              <p className="text-yellow-200">All payouts (ROI, Spot, Growth) have a <strong className="text-white">5% fee deducted</strong> and sent to system collector.</p>
+            </Card>
+
             <Card className="p-6 bg-gradient-to-br from-red-900/20 to-black/50 border border-red-700/30">
               <AlertTriangle className="w-8 h-8 text-red-400 mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">3× Capping</h3>
-              <p className="text-red-200">Total received across all incomes is capped at <strong className="text-white">3× of your current stake</strong>.</p>
+              <p className="text-red-200">Total received from ROI + Spot + Growth is capped at <strong className="text-white">3× of your total stake</strong>. Level rewards are <strong className="text-white">excluded</strong> from this cap.</p>
             </Card>
 
             <Card className="p-6 bg-gradient-to-br from-orange-900/20 to-black/50 border border-orange-700/30">
@@ -405,11 +502,17 @@ const RopdyMintPage: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-3">USD-Pegged Distribution</h3>
               <p className="text-blue-200">Daily ROI is <strong className="text-white">computed in USD value</strong> and released in RAMA at the current rate.</p>
             </Card>
+
+            <Card className="p-6 bg-gradient-to-br from-purple-900/20 to-black/50 border border-purple-700/30">
+              <RefreshCw className="w-8 h-8 text-purple-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Flexible Top-ups</h3>
+              <p className="text-purple-200">Reset existing slots early or add extra slots. Auto top-up prevents income interruption.</p>
+            </Card>
           </div>
 
           <div className="mt-8 p-4 bg-indigo-900/20 rounded-lg border border-indigo-700/30">
             <p className="text-sm text-indigo-300 text-center">
-              <strong>Note:</strong> Validator yields and program parameters may evolve; always check the latest details.
+              <strong>Note:</strong> Validator yields and program parameters may evolve; always check the latest details. Pool funds are used for Daily Growth payments.
             </p>
           </div>
         </div>
@@ -423,14 +526,16 @@ const RopdyMintPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
             {[
               { step: 1, title: 'Create a Ramestta Wallet', desc: 'Back up your keys securely.', icon: Wallet },
               { step: 2, title: 'Choose a Tier', desc: 'Pick 2× or 3× horizon.', icon: Layers },
               { step: 3, title: 'Stake RAMA', desc: 'Deposit RAMA equal to your chosen USD amount.', icon: Lock },
               { step: 4, title: 'Earn Daily ROI', desc: 'Rewards start minting automatically.', icon: Sparkles },
-              { step: 5, title: 'Grow Your Network', desc: 'Activate Circle income and aim for Leadership milestones.', icon: Network },
+             { step: 5, title: 'Configure Auto Top-Up', desc: 'Set up automatic slot management.', icon: Settings },
+             { step: 6, title: 'Grow Your Network', desc: 'Activate Circle income and aim for Leadership milestones.', icon: Network },
             ].map((item, index) => (
-              <Card key={index} className="p-6 text-center bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
+             <Card key={index} className="p-6 text-center bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-teal-600 flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold">{item.step}</span>
                 </div>
@@ -466,19 +571,23 @@ const RopdyMintPage: React.FC = () => {
             {[
               {
                 q: 'How are rewards protected from price swings?',
-                a: 'Your daily ROI is calculated in USD terms and released in RAMA at the current rate. You can sell immediately for stability or hold RAMA for potential upside.'
+                a: 'Your daily ROI is calculated in USD terms and released in RAMA at the current rate, minus a 5% system fee. You can sell immediately for stability or hold RAMA for potential upside.'
               },
               {
                 q: 'Where do rewards come from?',
-                a: 'From Ramestta validator delegation. The protocol redelegates daily to maintain program sustainability.'
+                a: 'ROI comes from Ramestta validator delegation. Daily Growth comes from a dedicated pool. The protocol redelegates daily to maintain sustainability.'
               },
               {
                 q: 'What happens at the 3× cap?',
-                a: 'Income pauses. Top-up your stake to resume receiving rewards.'
+                a: 'Income from ROI, Spot, and Growth pauses. Top-up your stake to resume receiving rewards. Level rewards are not affected by the cap.'
               },
               {
                 q: 'Can I withdraw anytime?',
                 a: 'Subject to smart-contract rules and horizon selection. Review the latest official docs before staking.'
+              },
+              {
+                q: 'What is the Auto Top-Up feature?',
+                a: 'You can configure automatic top-ups when your remaining cap drops below a threshold (10%-100%). Choose to reset existing slots or add new ones. Anyone can trigger the execution once conditions are met.'
               },
               {
                 q: 'Is there an admin who can change payouts?',
@@ -487,6 +596,10 @@ const RopdyMintPage: React.FC = () => {
               {
                 q: 'Do I need referrals?',
                 a: 'No for personal minting. Referrals accelerate income via Spot Commission and Daily Growth.'
+              },
+              {
+                q: 'What fees are involved?',
+                a: 'All payouts (ROI, Spot Commission, Daily Growth) have a 5% system fee deducted. Level rewards also have the 5% fee but are not subject to the 3× cap.'
               }
             ].map((faq, index) => (
               <Card key={index} className="p-6 bg-gradient-to-br from-indigo-900/20 to-black/50 border border-indigo-700/30">
@@ -509,6 +622,8 @@ const RopdyMintPage: React.FC = () => {
             <div className="space-y-2 text-sm text-red-200">
               <p>• Crypto assets are volatile; <strong>returns are not guaranteed</strong>.</p>
               <p>• Program parameters can change; <strong>always review the latest official details</strong>.</p>
+             <p>• All payouts include a <strong>5% system fee</strong>; factor this into your calculations.</p>
+             <p>• The 3× cap applies to ROI + Spot + Growth income; <strong>level rewards are separate</strong>.</p>
               <p>• This material is <strong>informational</strong> and not investment advice.</p>
               <p>• Participation may be restricted in some jurisdictions; ensure <strong>legal compliance</strong>.</p>
             </div>
