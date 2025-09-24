@@ -42,6 +42,33 @@ export const RopdyMintIntroSlide: React.FC = () => { // Renamed to Intro slide
     }
   ];
 
+  const steps = [
+    {
+      step: 1,
+      title: "Stake in USD Terms",
+      description: "Choose your tier and stake RAMA equivalent",
+      icon: "💰"
+    },
+    {
+      step: 2,
+      title: "Daily ROI Calculation",
+      description: "Earn daily rewards based on USD value",
+      icon: "📊"
+    },
+    {
+      step: 3,
+      title: "RAMA Payouts",
+      description: "Receive rewards in RAMA tokens",
+      icon: "💎"
+    },
+    {
+      step: 4,
+      title: "Auto Management",
+      description: "Optional auto top-up for continuous earning",
+      icon: "⚙️"
+    }
+  ];
+
   return (
     <div className="text-center">
       <motion.div
