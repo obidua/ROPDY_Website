@@ -57,6 +57,12 @@
   backdrop-filter: blur(5px); /* Slightly less blur */
   -webkit-backdrop-filter: blur(5px);
 }
+.cyber-card { /* Adjusted for more transparency */
+  background: rgba(0, 0, 0, 0.05); /* More transparent background */
+  border-radius: 8px;
+  backdrop-filter: blur(5px); /* Slightly less blur */
+  -webkit-backdrop-filter: blur(5px);
+}
 
 .cyber-card:hover {
   border-color: rgba(34, 197, 94, 0.5);

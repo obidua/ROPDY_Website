@@ -136,6 +136,13 @@ export const PresentationLayout: React.FC = () => {
           borderRadius: '12px',
           padding: '8px'
         }}
+        style={{ 
+          background: isFullScreen ? 'rgba(0, 0, 0, 0.05)' : 'rgba(0, 0, 0, 0.05)',
+          backdropFilter: 'blur(10px)',
+          borderRadius: '12px',
+          padding: '8px',
+          border: 'none'
+        }}
       >
         {/* Left Controls */}
         <div className="flex items-center space-x-1 sm:space-x-2">
@@ -230,6 +237,7 @@ export const PresentationLayout: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <div className="flex items-center space-x-1 sm:space-x-2 bg-black/60 backdrop-blur-xl rounded-xl p-1.5 sm:p-2 border border-white/20">
+        <div className="flex items-center space-x-1 sm:space-x-2 bg-black/5 backdrop-blur-xl rounded-xl p-1.5 sm:p-2">
           <motion.button
             onClick={() => setCurrentSlide(0)}
             disabled={currentSlide === 0}
@@ -332,6 +340,7 @@ export const PresentationLayout: React.FC = () => {
       {isFullScreen && (
         <motion.div
           className="hidden sm:block fixed top-1/2 left-2 transform -translate-y-1/2 bg-black/30 backdrop-blur-sm rounded-lg p-2 z-40"
+          className="fixed bottom-16 sm:bottom-20 left-2 sm:left-4 bg-black/5 backdrop-blur-sm rounded-lg p-2 z-40"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
