@@ -104,7 +104,7 @@ export const AboutRopdyDappSlide: React.FC = () => {
             <feature.icon className={`w-8 h-8 sm:w-12 sm:h-12 ${feature.color} mx-auto mb-2 sm:mb-4`} />
             <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-3">{feature.title}</h3>
             <p className="text-xs sm:text-sm text-gray-300">{feature.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
 
